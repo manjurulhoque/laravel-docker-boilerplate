@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  app:
+    container_name: myapp
+    build:
+      context: .
+      dockerfile: docker/Fpm.Dockerfile
+    working_dir: /var/www/html/lara-app
+    volumes:
+      - .:/var/www/html/lara-app
+    links:
+      - db
+    ports:
+      - 80:80
+  db:
+    container_name: laramysql
+    ports:
+      - 3306:3306
+    environment:
+      DB_HOST: ssh.manjurulhoque.com
+      MYSQL_DATABASE: laraapp
+      MYSQL_USER: rumi
+      MYSQL_ROOT_PASSWORD: r#532632
