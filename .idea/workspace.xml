@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7bb5a81-c266-4ba5-bd9c-814abd5f00aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docker/Fpm.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Fpm.Dockerfile" afterDir="false" />
-    </list>
+    <list default="true" id="d7bb5a81-c266-4ba5-bd9c-814abd5f00aa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +112,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -153,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1567057242326</updated>
       <workItem from="1567057243560" duration="5324000" />
-      <workItem from="1575311497413" duration="6840000" />
+      <workItem from="1575311497413" duration="7319000" />
     </task>
     <servers />
   </component>

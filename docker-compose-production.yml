@@ -5,7 +5,7 @@ services:
     container_name: myapp
     build:
       context: .
-      dockerfile: docker/Fpm.Dockerfile
+      dockerfile: docker/Fpm.Production.Dockerfile
     working_dir: /var/www/html/lara-app
     volumes:
       - .:/var/www/html/lara-app

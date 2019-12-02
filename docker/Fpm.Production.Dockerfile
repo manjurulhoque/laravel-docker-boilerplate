@@ -12,6 +12,8 @@ RUN chown -R www-data:www-data \
         /var/www/html/lara-app/storage \
         /var/www/html/lara-app/bootstrap/cache
 
+RUN cd .. && mv .env.production .env
+
 RUN php artisan optimize
 
 CMD ["php-fpm"]
