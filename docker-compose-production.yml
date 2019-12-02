@@ -31,5 +31,4 @@ services:
       #MYSQL_ROOT_PASSWORD: r#532632
 #Volumes
 volumes:
-  mysqldata:
-    driver: dbdata
+  dbdata:
