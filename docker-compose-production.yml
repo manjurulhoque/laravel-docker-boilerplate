@@ -14,11 +14,22 @@ services:
     ports:
       - 80:80
   db:
+    image: mysql:5.7
     container_name: laramysql
+    volumes:
+      - dbdata:/var/lib/mysql
     ports:
       - 3306:3306
     environment:
-      DB_HOST: ssh.manjurulhoque.com
       MYSQL_DATABASE: laraapp
-      MYSQL_USER: rumi
-      MYSQL_ROOT_PASSWORD: r#532632
+      MYSQL_USER: laraveluser
+      MYSQL_PASSWORD: laravel
+      MYSQL_ROOT_PASSWORD: 123456
+      #DB_HOST: ssh.manjurulhoque.com
+      #MYSQL_DATABASE: laraapp
+      #MYSQL_USER: rumi
+      #MYSQL_ROOT_PASSWORD: r#532632
+#Volumes
+volumes:
+  mysqldata:
+    driver: dbdata
