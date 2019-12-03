@@ -25,6 +25,12 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
     networks:
       - mynet
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    networks:
+      - mynet
 #Volumes
 volumes:
   dbdata:
