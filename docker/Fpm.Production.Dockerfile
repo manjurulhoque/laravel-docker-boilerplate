@@ -3,8 +3,8 @@ FROM php:7.2-fpm
 RUN apt-get update && apt-get install -y curl nano && docker-php-ext-install pdo pdo_mysql
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
-# COPY sites/docker.conf /etc/nginx/sites-available/
-# RUN ln -S /etc/nginx/sites-available/docker.conf /etc/nginx/sites-enabled/
+COPY ./docker/sites/docker.conf /etc/nginx/sites-available/
+RUN ln -S /etc/nginx/sites-available/docker.conf /etc/nginx/sites-enabled/
 
 WORKDIR /var/www/html/lara-app
 
