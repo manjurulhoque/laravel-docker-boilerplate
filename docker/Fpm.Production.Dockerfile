@@ -19,7 +19,7 @@ RUN chown -R www-data:www-data \
 RUN mv .env.production .env
 
 # RUN nginx -t
-RUN service nginx restart
+# RUN service nginx restart
 
 # RUN php artisan optimize
 
