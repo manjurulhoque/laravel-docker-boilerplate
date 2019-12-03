@@ -10,7 +10,7 @@ RUN mv composer.phar /usr/local/bin/composer
 
 WORKDIR /var/www/html/dockerapps/laravel-docker-boilerplate
 
-COPY . /var/www/html/dockerapps/laravel-docker-boilerplate
+# COPY . /var/www/html/dockerapps/laravel-docker-boilerplate
 
 RUN chown -R www-data:www-data \
         /var/www/html/dockerapps/laravel-docker-boilerplate/storage \
