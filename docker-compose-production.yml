@@ -13,7 +13,7 @@ services:
       - db
   db:
     image: mysql:5.7
-    container_name: laramysql
+    container_name: db
     volumes:
       - dbdata:/var/lib/mysql
     environment:
