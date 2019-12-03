@@ -6,13 +6,15 @@ RUN mv composer.phar /usr/local/bin/composer
 # COPY sites/docker.conf /etc/nginx/sites-available/
 # RUN ln -S /etc/nginx/sites-available/docker.conf /etc/nginx/sites-enabled/
 
+WORKDIR /var/www/html/lara-app
+
 COPY . /var/www/html/lara-app
 
 RUN chown -R www-data:www-data \
         /var/www/html/lara-app/storage \
         /var/www/html/lara-app/bootstrap/cache
 
-RUN cd .. && mv .env.production .env
+RUN mv .env.production .env
 
 RUN php artisan optimize
 
