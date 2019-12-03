@@ -16,11 +16,17 @@ RUN chown -R www-data:www-data \
         /var/www/html/dockerapps/laravel-docker-boilerplate/storage \
         /var/www/html/dockerapps/laravel-docker-boilerplate/bootstrap/cache
 
+RUN chown -R www-data:www-data /var/www/html/dockerapps/laravel-docker-boilerplate/public
+RUN chmod 755 /var/www/html/dockerapps/laravel-docker-boilerplate
+RUN chmod -R 755 /var/www/html/dockerapps/laravel-docker-boilerplate/bootstrap/cache
+RUN chmod -R 755 /var/www/html/dockerapps/laravel-docker-boilerplate/storage
+
 RUN mv .env.production .env
 
 # RUN nginx -t
 # RUN service nginx restart
 
 # RUN php artisan optimize
+RUN composer install
 
 CMD ["php-fpm"]
