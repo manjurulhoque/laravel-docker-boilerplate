@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7bb5a81-c266-4ba5-bd9c-814abd5f00aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/Fpm.Production.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Fpm.Production.Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
