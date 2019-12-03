@@ -6,7 +6,7 @@ RUN mv composer.phar /usr/local/bin/composer
 # COPY ./docker/sites/docker.com /etc/nginx/sites-available/
 # RUN /etc/nginx/sites-available/docker.com >> /etc/nginx/sites-enabled/default
 COPY ./docker/sites/docker.com /etc/nginx/sites-available/
-RUN ln -s /etc/nginx/sites-available/docker.com /etc/nginx/sites-enabled/
+RUN ln -s /etc/nginx/sites-available/docker.com /etc/nginx/sites-enabled/docker.com
 
 WORKDIR /var/www/html/lara-app
 
