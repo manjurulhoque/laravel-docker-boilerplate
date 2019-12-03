@@ -7,6 +7,9 @@ services:
       context: .
       dockerfile: docker/Fpm.Production.Dockerfile
     environment:
+      MYSQL_DATABASE: laraapp
+      MYSQL_USER: laraveluser
+      MYSQL_PASSWORD: laravel
       MYSQL_HOST: db
     working_dir: /var/www/html/dockerapps/laravel-docker-boilerplate
     volumes:
