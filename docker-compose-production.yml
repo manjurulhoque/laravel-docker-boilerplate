@@ -6,8 +6,6 @@ services:
     build:
       context: .
       dockerfile: docker/Fpm.Production.Dockerfile
-    environment:
-      MYSQL_HOST: db
     working_dir: /var/www/html/dockerapps/laravel-docker-boilerplate
     volumes:
         - .:/var/www/html/dockerapps/laravel-docker-boilerplate
