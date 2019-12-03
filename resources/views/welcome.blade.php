@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Host {{ env("DB_HOST") }}
                 </div>
 
                 <div class="links">
