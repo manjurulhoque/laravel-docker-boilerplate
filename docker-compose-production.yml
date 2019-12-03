@@ -6,9 +6,9 @@ services:
     build:
       context: .
       dockerfile: docker/Fpm.Production.Dockerfile
-    working_dir: /var/www/html/lara-app
+    working_dir: /var/www/html/dockerapps/laravel-docker-boilerplate
     volumes:
-      - .:/var/www/html/lara-app
+      - .:/var/www/html/dockerapps/laravel-docker-boilerplate
     links:
       - db
   db:

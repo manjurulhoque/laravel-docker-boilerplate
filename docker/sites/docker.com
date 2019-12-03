@@ -2,7 +2,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    root /var/www/html/lara-app/public;
+    root /var/www/html/dockerapps/laravel-docker-boilerplate/public;
     index index.php index.html index.htm index.nginx-debian.html;
 
     server_name docker.manjurulhoque.com;

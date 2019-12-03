@@ -7,13 +7,14 @@ RUN mv composer.phar /usr/local/bin/composer
 # RUN /etc/nginx/sites-available/docker.com >> /etc/nginx/sites-enabled/default
 # COPY ./docker/sites/docker.com /etc/nginx/sites-available/
 # RUN ln -s /etc/nginx/sites-available/docker.com /etc/nginx/sites-enabled
-RUN cp /var/www/html/dockerapps/laravel-docker-boilerplate /var/www/html/lara-app
 
-WORKDIR /var/www/html/lara-app
+WORKDIR /var/www/html/dockerapps/laravel-docker-boilerplate
+
+COPY . /var/www/html/dockerapps/laravel-docker-boilerplate
 
 RUN chown -R www-data:www-data \
-        /var/www/html/lara-app/storage \
-        /var/www/html/lara-app/bootstrap/cache
+        /var/www/html/dockerapps/laravel-docker-boilerplate/storage \
+        /var/www/html/dockerapps/laravel-docker-boilerplate/bootstrap/cache
 
 RUN mv .env.production .env
 
