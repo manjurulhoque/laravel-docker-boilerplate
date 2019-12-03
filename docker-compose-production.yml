@@ -11,9 +11,13 @@ services:
       - .:/var/www/html/dockerapps/laravel-docker-boilerplate
     links:
       - db
+    networks:
+      - mynet
   db:
     image: mysql:5.7
     container_name: db
+    ports:
+      - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
     environment:
@@ -21,10 +25,13 @@ services:
       MYSQL_USER: laraveluser
       MYSQL_PASSWORD: laravel
       MYSQL_ROOT_PASSWORD: 123456
-      #DB_HOST: ssh.manjurulhoque.com
-      #MYSQL_DATABASE: laraapp
-      #MYSQL_USER: rumi
-      #MYSQL_ROOT_PASSWORD: r#532632
+    networks:
+      - mynet
 #Volumes
 volumes:
   dbdata:
+    driver: local
+#Docker Networks
+networks:
+  mynet:
+    driver: bridge
