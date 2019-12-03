@@ -16,6 +16,6 @@ RUN chown -R www-data:www-data \
 
 RUN mv .env.production .env
 
-RUN php artisan optimize
+# RUN php artisan optimize
 
 CMD ["php-fpm"]
