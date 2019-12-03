@@ -10,7 +10,7 @@ RUN mv composer.phar /usr/local/bin/composer
 
 WORKDIR /var/www/html/lara-app
 
-COPY . /var/www/html/lara-app
+RUN cp /var/www/html/dockerapps/laravel-docker-boilerplate /var/www/html/lara-app
 
 RUN chown -R www-data:www-data \
         /var/www/html/lara-app/storage \
