@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d7bb5a81-c266-4ba5-bd9c-814abd5f00aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/docker-compose-production.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-production.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/conf/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/conf/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -28,7 +28,7 @@ services:
     tty: true
     volumes:
       - ./:/var/www/html/lara-app
-      - ./docker/sites/laravel.conf:/etc/nginx/conf.d/
+      - ./docker/conf/:/etc/nginx/conf.d/
     networks:
       - mynet
 
