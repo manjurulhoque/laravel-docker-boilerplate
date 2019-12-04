@@ -26,8 +26,6 @@ services:
     container_name: nginx
     restart: unless-stopped
     tty: true
-    ports:
-      - "80:80"
     volumes:
       - ./:/var/www/html/lara-app
       - ./docker/sites/laravel.conf:/etc/nginx/conf.d/
@@ -40,8 +38,6 @@ services:
     container_name: db
     restart: unless-stopped
     tty: true
-    ports:
-      - "3306:3306"
     environment:
       MYSQL_DATABASE: laraapp
       MYSQL_USER: laraveluser
