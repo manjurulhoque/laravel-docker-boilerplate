@@ -8,19 +8,19 @@ RUN mv composer.phar /usr/local/bin/composer
 # COPY ./docker/sites/docker.com /etc/nginx/sites-available/
 # RUN ln -s /etc/nginx/sites-available/docker.com /etc/nginx/sites-enabled
 
-WORKDIR /var/www/html/dockerapps/laravel-docker-boilerplate
+WORKDIR /var/www/html/lara-app
 
-COPY . /var/www/html/dockerapps/laravel-docker-boilerplate
+COPY . /var/www/html/lara-app
 
 RUN chown -R www-data:www-data \
-        /var/www/html/dockerapps/laravel-docker-boilerplate/storage \
-        /var/www/html/dockerapps/laravel-docker-boilerplate/bootstrap/cache
+        /var/www/html/lara-app/storage \
+        /var/www/html/lara-app/bootstrap/cache
 
-RUN chown -R :www-data /var/www/html/dockerapps/laravel-docker-boilerplate
-RUN chown -R www-data:www-data /var/www/html/dockerapps/laravel-docker-boilerplate/public
-RUN chmod 755 /var/www/html/dockerapps/laravel-docker-boilerplate
-RUN chmod -R 755 /var/www/html/dockerapps/laravel-docker-boilerplate/bootstrap/cache
-RUN chmod -R 755 /var/www/html/dockerapps/laravel-docker-boilerplate/storage
+RUN chown -R :www-data /var/www/html/lara-app
+RUN chown -R www-data:www-data /var/www/html/lara-app/public
+RUN chmod 755 /var/www/html/lara-app
+RUN chmod -R 755 /var/www/html/lara-app/bootstrap/cache
+RUN chmod -R 755 /var/www/html/lara-app/storage
 
 RUN mv .env.production .env
 
@@ -30,4 +30,5 @@ RUN mv .env.production .env
 # RUN php artisan optimize
 RUN composer install
 
+EXPOSE 9000
 CMD ["php-fpm"]

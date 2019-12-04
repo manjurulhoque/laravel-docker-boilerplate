@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+  #Laravel App
   app:
     container_name: myapp
     build:
@@ -11,36 +12,51 @@ services:
       MYSQL_USER: laraveluser
       MYSQL_PASSWORD: laravel
       MYSQL_HOST: db
-    working_dir: /var/www/html/dockerapps/laravel-docker-boilerplate
+    working_dir: /var/www/html/lara-app
     volumes:
-        - .:/var/www/html/dockerapps/laravel-docker-boilerplate
+      - .:/var/www/html/lara-app
     links:
       - db
     networks:
       - mynet
+
+  #Nginx Service
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html/lara-app
+      - ./docker/sites/laravel.conf:/etc/nginx/conf.d/
+    networks:
+      - mynet
+
+  #MySQL Service
   db:
     image: mysql:5.7
     container_name: db
-    volumes:
-      - dbdata:/var/lib/mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: laraapp
-      MYSQL_USER: laraveluser
-      MYSQL_PASSWORD: laravel
-      MYSQL_ROOT_PASSWORD: 123456
+        MYSQL_USER: laraveluser
+        MYSQL_PASSWORD: laravel
+        MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - dbdata:/var/lib/mysql/
     networks:
       - mynet
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    depends_on:
-      - db
-    networks:
-      - mynet
-#Volumes
-volumes:
-  dbdata:
-    driver: local
+
 #Docker Networks
 networks:
   mynet:
     driver: bridge
+#Volumes
+volumes:
+  dbdata:
+    driver: local
