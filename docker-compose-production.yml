@@ -44,9 +44,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: laraapp
-        MYSQL_USER: laraveluser
-        MYSQL_PASSWORD: laravel
-        MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: laraveluser
+      MYSQL_PASSWORD: laravel
+      MYSQL_ROOT_PASSWORD: 123456
     volumes:
       - dbdata:/var/lib/mysql/
     networks:
